@@ -1,0 +1,104 @@
+.content {
+    margin: 1% 15% 0 15%;
+}
+
+
+.rule {
+    position: relative;
+}
+
+.rule-list {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    display: flex;
+    margin-top: 42px;
+}
+
+.rule .rule-list-left {
+    width: 50%;
+    height: 350px;
+    overflow-y: auto;
+}
+
+.rule .rule-list-right {
+    width: 50%;
+    height: 350px;
+    overflow-y: auto;
+    border-left: 1px solid #CCCCCC;
+}
+
+.rule .rule-item {
+    position: relative;
+    width: 100%;
+    height: 32px;
+    border-bottom: 1px solid #D5D8E6;
+    display: flex;
+    align-items: center;
+}
+
+.rule-item .rule-item-text{
+    padding-left: 4px;
+    width: calc(100% - 68px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rule-item .rule-item-action {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.rule-item:hover .rule-item-action {
+    visibility: visible;
+}
+
+.rule-action {
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: -46px;
+    margin-top: 4px;
+}
+
+.rule-action .hide-file {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    font-size: 24px;
+    width: 96px;
+}
+
+.output {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+    /* height: 200px;
+    justify-content: center;
+    display: flex; */
+}
+
+#treeChart {
+    margin-left: -15vw;
+    width: 99vw;
+}
+
+#displayTree {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-submit {
+    position: absolute;
+    right: 0;
+    height: 32px;
+}

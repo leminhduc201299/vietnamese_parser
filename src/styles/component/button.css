@@ -1,0 +1,78 @@
+.m-btn {
+    padding: 0 12px;
+    border-radius: 4px;
+    height: 32px;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin: 0 0 0 8px;
+    font-family: 'OpenSans-Semibold';
+    
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* active */
+/* .m-btn:active {
+    background-color: #01B075;
+} */
+
+
+/* default */
+.m-btn-default {
+    min-width: 96px;
+    background-color: #03AE66;
+}
+.m-btn-default:hover {
+    background-color: #02BF70;
+    cursor: pointer;
+}
+
+
+/* Second button */
+.m-second-btn {
+    min-width: 96px;
+    background-color: #FFFFFF;
+    color: #3D3F4E;
+    border: 1px solid #CECECE;
+}
+
+.m-second-btn:hover {
+    background-color: #EAECEF;
+    cursor: pointer;
+}
+
+
+/* button with icon */
+.m-btn-icon {
+    min-width: 96px;
+    background-color: #FFFFFF;
+    color: #03AE66;
+    border: 1px solid #0FA655;
+}
+
+.m-btn .m-btn-icon-add {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+}
+
+.m-btn-icon:hover {
+    background-color: #03AE66;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.m-btn-action {
+    width: 32px;
+    background-color: #FFFFFF;
+    color: #3D3F4E;
+    border: 1px solid #CECECE;
+}
+
+.m-btn-action:hover {
+    background-color: #F8F8F8;
+    cursor: pointer;
+}

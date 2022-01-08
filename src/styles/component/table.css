@@ -1,0 +1,94 @@
+.m-table {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.m-table .m-table-checkbox {
+  height: 22px;
+  width: 22px;
+}
+
+.m-table-action-icon {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.m-table thead {
+  height: 40px;
+}
+
+.m-table th {
+  position: sticky;
+  background-color: #F5F6FA;
+  top: 0px;
+}
+
+.m-table th, .m-table td {
+    border-bottom: 1px solid #D5D8E6;
+    border-right: 1px solid #D5D8E6;
+    padding: 0 8px;
+}
+
+.m-table .m-table-action {
+  border-right: none;
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.icon-remove:hover {
+  background: url('../../assets/icon/ic_Remove_Hover.png') !important;
+  width: 24px;
+  height: 24px !important;
+}
+
+.m-table tr:hover {
+    background-color: #E5F3FF;
+}
+
+.m-table tr td {
+  height: 40px;
+}
+
+td .text-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td .icon-check {
+  background-position: center;
+}
+
+
+/* Thanh cuộn bảng */
+::-webkit-scrollbar {
+  display: block;
+  height: 8px;
+  width: 8px;
+  background: #f5f5f5;
+  margin-top: 40px;
+}
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #AFAFAF;
+    width: 6px;
+    height: 10px;
+    border-radius: 4px;
+    background-color: #b5b5b5;
+    box-shadow: inset 0 0 6px rgb(0 0 0 / 20%);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    /* background: #595858;  */
+  }

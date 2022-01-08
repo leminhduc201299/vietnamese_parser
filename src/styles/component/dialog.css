@@ -1,0 +1,146 @@
+.m-dialog {
+    position: fixed; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.m-dialog .m-visibility-hidden {
+    visibility: hidden;
+}
+
+.m-dialog .m-dialog-modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.2;
+    background-color: #000;
+}
+
+.m-dialog .m-dialog-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 4px;
+}
+
+/* Dialog box */
+.m-dialog .m-dialog-header {
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+    .m-dialog .m-dialog-header .m-dialog-header-title {
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .m-dialog .m-dialog-header .m-dialog-header-icon {
+        position: absolute;
+        top: 12px;
+        margin: 0;
+        height: 22px;
+        width: 22px;
+    }
+
+    .m-dialog .m-dialog-header .m-dialog-header-icon-close {
+        right: 12px;
+    }
+
+    .m-dialog .m-dialog-header .m-dialog-header-icon-help {
+        right: 31px;
+    }
+
+    .m-dialog .m-dialog-header .m-dialog-header-close:hover {
+        background-color: #E9EBEE;
+        cursor: pointer;
+    }
+
+    /* footer */
+.m-dialog .m-dialog-footer {
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 4px 4px;
+    padding: 12px 24px 24px 24px;
+}
+
+.m-dialog .m-dialog-footer .m-dialog-footer-button {
+    position: relative;
+    right: 0;
+    display: flex;
+    width: 100%;
+    justify-content: right;
+}
+
+
+/* Content */
+.m-dialog .m-dialog-content {
+    padding: 0 24px;
+    /* margin-bottom: 24px; */
+    display: flex;
+}
+
+.m-dialog .m-dialog-content .m-dialog-content-left {
+    width: 155px;
+    padding-right: 30px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.m-dialog .m-dialog-content-left .employee-avatar {
+    background-image: url('../../assets//icon//employee-avatar.svg');
+    height: 160px;
+    width: 100%;
+    background-size: cover;
+}
+
+.m-dialog .m-dialog-content-left .avatar-input .m-btn-default {
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+    width: 100%;
+    margin-top: -4px;
+    margin-left: 0;
+}
+
+.m-dialog .m-dialog-content-left .employee-info-name {
+    padding-top: 16px;
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+}
+
+.m-dialog .m-dialog-content-left .employee-info-code {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+
+.m-dialog .m-dialog-content .m-dialog-content-right {
+    /* margin-left: 25px; */
+}
+
+.m-dialog-content-right .m-infor-title {
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-family: 'OpenSans-Semibold';
+}
+
+.m-dialog-content-right .m-infor-title .forn-info {
+    display: flex;
+    flex-direction: column !important;
+}

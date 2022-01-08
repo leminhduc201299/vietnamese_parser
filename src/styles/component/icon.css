@@ -1,0 +1,202 @@
+.icon {
+
+}
+
+.icon-add {
+    background-image: url('../../assets/icon/ic_Plus.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-checkbox-inactive {
+    background-image: url('../../assets/icon/ic_Checkbox_Inactive.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-checkbox-active {
+    background-image: url('../../assets/icon/ic_Checkbox_Active.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-edit {
+    background-image: url('../../assets/icon/ic_Edit.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-remove {
+    background-image: url('../../assets/icon/ic_Remove.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-search {
+    background-image: url('../../assets/icon/Ic_seerch.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 4px) center;
+}
+
+.icon-dashboard {
+    background-image: url('../../assets/icon/ic_TongQuan.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.icon-device {
+    background-image: url('../../assets/icon/ic_ThietBi.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.icon-return {
+    background-image: url('../../assets/icon/ic_MuonTra.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.icon-report {
+    background-image: url('../../assets/icon/ic_BaoCao.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.icon-setting {
+    background-image: url('../../assets/icon/ic_HeThong.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.icon-help {
+    background-image: url('../../assets/icon/ic_Help.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-avatar {
+    background-image: url('../../assets/icon/ic_Avatar_36.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-chevron {
+    background-image: url('../../assets/icon/ic_Chevron.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-notification {
+    background-image: url('../../assets/icon/ic_Notification_32.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-more {
+    background-image: url('../../assets/icon/ic_More.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-more {
+    background-image: url('../../assets/icon/ic_More.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-first {
+    background-image: url('../../assets/icon/ic_MoveToFirst.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-back {
+    background-image: url('../../assets/icon/ic_Back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-next {
+    background-image: url('../../assets/icon/ic_Next.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-last {
+    background-image: url('../../assets/icon/ic_MoveToLast.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-close {
+    background-image: url('../../assets/icon/ic_X_2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-x {
+    background-image: url('../../assets/icon/ic_X.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-green-help {
+    background-image: url('../../assets/icon/ic_Help.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-checkbox-inactive {
+    background-image: url('../../assets/icon/ic_Checkbox_Inactive.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-checkbox-hover {
+    background-image: url('../../assets/icon/ic_Checkbox_Hover.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.icon-checkbox-active {
+    background-image: url('../../assets/icon/ic_Checkbox_Active.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-check {
+    background-image: url('../../assets/icon/ic_Check.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-toast-success {
+    background-image: url('../../assets/icon/ic_ToastMessage_Success.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-toast-warning {
+    background-image: url('../../assets/icon/ic_ToastMessage_Warning.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-toast-error {
+    background-image: url('../../assets/icon/ic_ToastMessage_Fail.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-delete {
+    background-image: url('../../assets/icon/ic_delete.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

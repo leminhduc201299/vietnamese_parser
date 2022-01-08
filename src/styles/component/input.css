@@ -1,0 +1,62 @@
+.m-input {
+    border: 1px solid #CCCCCC;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    color: #212121;
+    opacity: 0.9;
+}
+
+.m-input-full {
+    width: calc(100% - 100px);
+}
+
+.m-input:focus {
+    border: 1px solid #0DD469;
+}
+
+.m-input::placeholder {
+    font-size: 11px;
+}
+
+.m-input-icon {
+    padding-right: 40px;
+}
+
+.m-input-label {
+    display: inline-block;
+    font-weight: normal;
+    padding-bottom: 4px;
+    font-size: 14px;
+}
+
+.w-100 {
+    width: 100px;
+}
+
+.w-110 {
+    width: 110px;
+}
+
+.m-span-require {
+    color: #FF4747;
+}
+
+.m-input-invalid {
+    border-color: #ff7777;
+}
+
+/* Remove Arrows/Spinners */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
