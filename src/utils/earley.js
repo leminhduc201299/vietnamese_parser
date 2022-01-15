@@ -81,8 +81,8 @@ function init(g, t) {
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-var tinynlp = (function () {
-
+var tinynlp = (function(){
+    
     function Grammar(rules) {
         this.lhsToRhsList = {};
         for (var i in rules) {
@@ -105,24 +105,24 @@ var tinynlp = (function () {
             // {... "A": [["B", "C"], ["D"]] ...}
         }
     }
-    Grammar.prototype.terminalSymbols = function () {
+    Grammar.prototype.terminalSymbols = function() {
         return [];
     }
-    Grammar.prototype.getRightHandSides = function (leftHandSide) {
-        var rhss = this.lhsToRhsList[leftHandSide];
-        if (rhss) {
-            return rhss;
-        }
-        return null;
+    Grammar.prototype.getRightHandSides = function(leftHandSide) {
+            var rhss = this.lhsToRhsList[leftHandSide];
+            if (rhss) {
+                return rhss;
+            }
+            return null;
     }
-    Grammar.prototype.isEpsilonProduction = function (term) {
+    Grammar.prototype.isEpsilonProduction = function(term) {
         // This is needed for handling of epsilon (empty) productions
         // TODO: get rid of this hardcode name for epsilon productions
         return "_EPSILON_" == term;
     }
-
+    
     //------------------------------------------------------------------------------------
-
+    
     let loggingOn = true;
     function logging(allow) {
         loggingOn = allow;
@@ -136,16 +136,16 @@ var tinynlp = (function () {
             this.chart[i] = [];
         }
     }
-    Chart.prototype.addToChart = function (newState, position) {
+    Chart.prototype.addToChart = function(newState, position) {
         newState.setId(this.currentId);
         // TODO: use HashSet + LinkedList
         var chartColumn = this.chart[position];
         for (var x in chartColumn) {
             var chartState = chartColumn[x];
             if (newState.equals(chartState)) {
-
+            
                 let changed = false; // This is needed for handling of epsilon (empty) productions
-
+                
                 changed = chartState.appendRefsToChidStates(newState.getRefsToChidStates());
                 return changed;
             }
@@ -153,24 +153,24 @@ var tinynlp = (function () {
         chartColumn.push(newState);
         this.idToState[this.currentId] = newState;
         this.currentId++;
-
+        
         let changed = true; // This is needed for handling of epsilon (empty) productions
         return changed;
     }
-    Chart.prototype.getStatesInColumn = function (index) {
+    Chart.prototype.getStatesInColumn = function(index) {
         return this.chart[index];
     }
-    Chart.prototype.countStatesInColumn = function (index) {
+    Chart.prototype.countStatesInColumn = function(index) {
         return this.chart[index].length;
     }
-    Chart.prototype.getState = function (id) {
+    Chart.prototype.getState = function(id) {
         return this.idToState[id];
     }
-    Chart.prototype.getFinishedRoot = function (rootRule) {
+    Chart.prototype.getFinishedRoot = function( rootRule ) {
         var lastColumn = this.chart[this.chart.length - 1];
-        for (var i in lastColumn) {
+        for(var i in lastColumn) {
             var state = lastColumn[i];
-            if (state.complete() && state.getLeftHandSide() == rootRule) {
+            if(state.complete() && state.getLeftHandSide() == rootRule ) {
                 // TODO: there might be more than one root rule in the end
                 // so, there is needed to return an array with all these roots
                 return state;
@@ -178,8 +178,8 @@ var tinynlp = (function () {
         }
         return null;
     }
-    Chart.prototype.log = function (column) {
-        if (loggingOn) {
+    Chart.prototype.log = function(column) {
+        if(loggingOn) {
             console.log('-------------------')
             console.log('Column: ' + column)
             console.log('-------------------')
@@ -188,9 +188,9 @@ var tinynlp = (function () {
             }
         }
     }
-
+    
     //------------------------------------------------------------------------------------
-
+    
     function State(lhs, rhs, dot, left, right) {
         this.lhs = lhs;
         this.rhs = rhs;
@@ -203,10 +203,10 @@ var tinynlp = (function () {
             this.ref[i] = {};
         }
     }
-    State.prototype.complete = function () {
+    State.prototype.complete = function() {
         return this.dot >= this.rhs.length;
     }
-    State.prototype.toString = function () {
+    State.prototype.toString = function() {
         var builder = [];
         builder.push('(id: ' + this.id + ')');
         builder.push(this.lhs);
@@ -224,7 +224,7 @@ var tinynlp = (function () {
         builder.push(JSON.stringify(this.ref))
         return builder.join(' ');
     }
-    State.prototype.expectedNonTerminal = function (grammar) {
+    State.prototype.expectedNonTerminal = function(grammar) {
         var expected = this.rhs[this.dot];
         var rhss = grammar.getRightHandSides(expected);
         if (rhss !== null) {
@@ -232,29 +232,29 @@ var tinynlp = (function () {
         }
         return false;
     }
-    State.prototype.setId = function (id) {
+    State.prototype.setId = function(id) {
         this.id = id;
     }
-    State.prototype.getId = function () {
+    State.prototype.getId = function() {
         return this.id;
     }
-    State.prototype.equals = function (otherState) {
+    State.prototype.equals = function(otherState) {
         if (this.lhs === otherState.lhs && this.dot === otherState.dot && this.left === otherState.left && this.right === otherState.right && JSON.stringify(this.rhs) === JSON.stringify(otherState.rhs)) {
             return true;
         }
         return false;
     }
-    State.prototype.getRefsToChidStates = function () {
+    State.prototype.getRefsToChidStates = function() {
         return this.ref;
     }
-    State.prototype.appendRefsToChidStates = function (refs) {
-
+    State.prototype.appendRefsToChidStates = function(refs) {
+    
         var changed = false; // This is needed for handling of epsilon (empty) productions
-
+        
         for (var i = 0; i < refs.length; i++) {
             if (refs[i]) {
                 for (var j in refs[i]) {
-                    if (this.ref[i][j] != refs[i][j]) {
+                    if(this.ref[i][j] != refs[i][j]) {
                         changed = true;
                     }
                     this.ref[i][j] = refs[i][j];
@@ -263,33 +263,33 @@ var tinynlp = (function () {
         }
         return changed;
     }
-    State.prototype.predictor = function (grammar, chart) {
+    State.prototype.predictor = function(grammar, chart) {
         var nonTerm = this.rhs[this.dot];
         var rhss = grammar.getRightHandSides(nonTerm);
         var changed = false; // This is needed for handling of epsilon (empty) productions
         for (var i in rhss) {
             var rhs = rhss[i];
-
+            
             // This is needed for handling of epsilon (empty) productions
             // Just skipping over epsilon productions in right hand side
             // However, this approach might lead to the smaller amount of parsing tree variants
             var dotPos = 0;
-            while (rhs && (dotPos < rhs.length) && (grammar.isEpsilonProduction(rhs[dotPos]))) {
+            while(rhs && (dotPos < rhs.length) && (grammar.isEpsilonProduction(rhs[dotPos]))) {
                 dotPos++;
             }
-
+            
             var newState = new State(nonTerm, rhs, dotPos, this.right, this.right);
             changed |= chart.addToChart(newState, this.right);
         }
         return changed;
     }
-    State.prototype.scanner = function (grammar, chart, token) {
+    State.prototype.scanner = function(grammar, chart, token) {
         var term = this.rhs[this.dot];
-
+        
         var changed = false; // This is needed for handling of epsilon (empty) productions
-
+        
         var tokenTerminals = token ? grammar.terminalSymbols(token) : [];
-        if (!tokenTerminals) {
+        if(!tokenTerminals) {
             // in case if grammar.terminalSymbols(token) returned 'undefined' or null
             tokenTerminals = [];
         }
@@ -301,26 +301,26 @@ var tinynlp = (function () {
                 break;
             }
         }
-
+        
         return changed;
     }
-    State.prototype.completer = function (grammar, chart) {
-
+    State.prototype.completer = function(grammar, chart) {
+    
         var changed = false; // This is needed for handling of epsilon (empty) productions
-
+        
         var statesInColumn = chart.getStatesInColumn(this.left);
         for (var i in statesInColumn) {
             var existingState = statesInColumn[i];
             if (existingState.rhs[existingState.dot] == this.lhs) {
-
+            
                 // This is needed for handling of epsilon (empty) productions
                 // Just skipping over epsilon productions in right hand side
                 // However, this approach might lead to the smaller amount of parsing tree variants
                 var dotPos = existingState.dot + 1;
-                while (existingState.rhs && (dotPos < existingState.rhs.length) && (grammar.isEpsilonProduction(existingState.rhs[dotPos]))) {
-                    dotPos++;
+                while(existingState.rhs && (dotPos < existingState.rhs.length) && (grammar.isEpsilonProduction(existingState.rhs[dotPos]))) {
+                  dotPos++;
                 }
-
+                
                 var newState = new State(existingState.lhs, existingState.rhs, dotPos, existingState.left, this.right);
                 // copy existing refs to new state
                 newState.appendRefsToChidStates(existingState.ref);
@@ -332,17 +332,17 @@ var tinynlp = (function () {
                 changed |= chart.addToChart(newState, this.right);
             }
         }
-
+        
         return changed;
     }
-
+    
     //------------------------------------------------------------------------------------
-
+    
     // Returning all possible correct parse trees
     // Possible exponential complexity and memory consumption!
     // Take care of your grammar!
     // TODO: instead of returning all possible parse trees - provide iterator + callback
-    State.prototype.traverse = function () {
+    State.prototype.traverse = function() {
         if (this.ref.length == 1 && Object.keys(this.ref[0]).length == 0) {
             // This is last production in parse tree (leaf)
             var subtrees = [];
@@ -364,7 +364,7 @@ var tinynlp = (function () {
         var rhsSubTrees = [];
         for (let i = 0; i < this.ref.length; i++) {
             rhsSubTrees[i] = [];
-            for (let j in this.ref[i]) {
+            for (var j in this.ref[i]) {
                 rhsSubTrees[i] = rhsSubTrees[i].concat(this.ref[i][j].traverse());
             }
         }
@@ -373,7 +373,7 @@ var tinynlp = (function () {
         var result = [];
         for (let i in possibleSubTrees) {
             result.push({
-                root: this.lhs,
+                root: this.lhs, 
                 left: this.left,
                 right: this.right,
                 subtrees: possibleSubTrees[i]
@@ -381,7 +381,7 @@ var tinynlp = (function () {
         }
         return result;
     }
-
+    
     // Generating array of all possible combinations, e.g.:
     // input: [[1, 2, 3], [4, 5]]
     // output: [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]]
@@ -394,11 +394,11 @@ var tinynlp = (function () {
             result.push(stack.slice());
             return;
         }
-        if (arrOfArr[i].length == 0) {
+        if(arrOfArr[i].length == 0) {
             combinations(arrOfArr, i + 1, stack, result);
         } else {
             for (var j in arrOfArr[i]) {
-                if (stack.length == 0 || stack[stack.length - 1].right == arrOfArr[i][j].left) {
+                if(stack.length == 0 || stack[stack.length - 1].right == arrOfArr[i][j].left) {
                     stack.push(arrOfArr[i][j]);
                     combinations(arrOfArr, i + 1, stack, result);
                     stack.pop();
@@ -406,15 +406,15 @@ var tinynlp = (function () {
             }
         }
     }
-
+    
     //------------------------------------------------------------------------------------
-
-    State.prototype.getLeftHandSide = function () {
+            
+    State.prototype.getLeftHandSide = function() {
         return this.lhs;
     }
-
+            
     //------------------------------------------------------------------------------------
-
+    
     function parse(tokens, grammar, rootRule) {
         var chart = new Chart(tokens);
         var rootRuleRhss = grammar.getRightHandSides(rootRule);
@@ -424,10 +424,10 @@ var tinynlp = (function () {
             chart.addToChart(initialState, 0);
         }
         for (let i = 0; i < tokens.length + 1; i++) {
-
+        
             var changed = true; // This is needed for handling of epsilon (empty) productions
-
-            while (changed) {
+            
+            while(changed) {
                 changed = false;
                 let j = 0;
                 while (j < chart.countStatesInColumn(i)) {
@@ -447,8 +447,8 @@ var tinynlp = (function () {
             chart.log(i)
         }
         return chart;
-    }
-
+    }    
+    
     var exports = {};
     exports.Grammar = Grammar;
     exports.State = State;

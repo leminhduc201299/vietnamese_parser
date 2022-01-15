@@ -120,6 +120,8 @@ import myEnum from "../../utils/enum.js";
 import Toastify from "../../utils/toastify";
 import cky from "../../utils/cky.js";
 import earley from "../../utils/earley.js";
+// import request from "../../utils/request";
+import axios from 'axios';
 
 export default {
   name: "the-content",
@@ -266,18 +268,50 @@ export default {
     },
 
     onBtnSubmitClick() {
-      if (this.algorithm === 0) {
-        cky(this.rules, this.inputSentence);
-      }
-      else if (this.algorithm === 1) {
-        earley(this.rules, this.inputSentence)
-      }
+      axios(
+        {
+          url: `https://nlp-tokenize.herokuapp.com/tokenize/${this.inputSentence}`,
+          method: "GET",
+        }
+      )
+        .then((res) => {
+            console.log(res.data.res);
 
-      console.log({
-        inputSentence: this.inputSentence,
-        algorithm: this.algorithm,
-        rules: this.rules,        
-      })
+            let arr1 = res.data.res[1];
+            let arr2 = res.data.res[0];
+            
+            let newRuleList = [];
+            for (let i in arr1) {
+              let temp = [arr1[i], arr2[i]];
+              let newRule = temp.join(' -> ');
+
+              newRuleList.push(newRule);
+            }
+
+            let ruleSet = [
+              ...this.rules,
+              ...newRuleList
+            ]
+
+            console.log({
+              inputSentence: arr2.join(' '),
+              algorithm: this.algorithm,
+              rules: ruleSet,        
+            })
+
+            if (this.algorithm === 0) {
+              cky(ruleSet, arr2.join(' '));
+            }
+            else if (this.algorithm === 1) {
+              earley(ruleSet, arr2.join(' '))
+            }
+
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      
     },
 
     onFileChange(e) {

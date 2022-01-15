@@ -126,10 +126,22 @@ function init(grammar, inputSentence) {
 
     var parseTable = parse(grammarToHashMap(grammar), inputSentence.split(' '));
     for (var i in parseTable[0][parseTable.length - 1]) {
-        document.getElementById('treeChart').innerHTML += '<div class="tree" id="displayTree"><ul>' + traverseParseTable(parseTable, 0, parseTable.length - 1, i) + '</ul></div><br/><br/><br/>';
+        document.getElementById('treeChart').innerHTML += '<div class="tree" id="displayTree"><ul>' + traverseParseTable(parseTable, 0, parseTable.length - 1, i) + '</ul></div><br/>';
     }
 
     Toastify.hideLoading();
+
+    var els = document.querySelectorAll(".tree ul:first-child > li:first-child > a")
+
+    els.forEach(function(item) {
+        if(!['S', 'SQ', 'SE', 'SF', 'SC'].includes(item.innerText))
+        var node = item.parentNode.parentNode.parentNode
+        if (node) {
+            node.nextSibling.remove()
+            node.remove()
+        }
+        
+    })
 }
 
 export default init;
