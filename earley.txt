@@ -1,0 +1,15 @@
+S -> PP AP
+PP -> N N
+AP -> A R
+S -> NP AP
+NP -> N N
+S -> NP VP
+VP -> V N
+NP -> N
+S -> NP PP
+NP -> N VP
+PP -> E PP
+NP -> P VP
+VP -> V NP
+NP -> N A
+PP -> E NP

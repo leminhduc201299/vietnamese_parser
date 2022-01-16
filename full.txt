@@ -1,0 +1,316 @@
+AP -> A PP
+NP -> N RP
+QP -> QP QP
+NP -> Ny P
+AP -> A Ny
+VP -> M V
+NP -> Ny M
+SQ -> P VP
+NP -> NP PP
+NP -> Ny N
+S -> RP VP
+AP -> A QP
+NP -> E NP
+RP -> R NP
+VP -> E VP
+AP -> A NP
+AP -> A MP
+NP -> P NP
+AP -> A Nc
+RP -> R R
+RP -> R N
+NP -> N VP
+AP -> A Np
+RP -> R T
+RP -> R V
+RP -> R A
+VP -> VP T
+NP -> P Np
+VP -> VP P
+PP -> E AP
+VP -> VP V
+AP -> R AP
+XP -> X NP
+RP -> R PP
+NP -> Np NP
+VP -> R VP
+NP -> P PP
+MP -> M N
+NP -> C N
+QP -> R NP
+NP -> NyH
+NP -> N XP
+NP -> Np MP
+Y -> M
+Y -> T
+Ny -> T
+Ny -> V
+Ny -> Y
+AP -> A RP
+S -> E VP
+Ny -> N
+NP -> Np PP
+NP -> Nc VP
+Ny -> P
+N -> A
+VP -> L N
+S -> RP PP
+NP -> AP PP
+NP -> Ny VP
+NP -> NP NP
+Ny -> A
+PP -> N P
+VP -> VP AP
+PP -> N N
+PP -> N M
+NP -> Np Np
+NP -> T P
+NP -> T N
+S -> NP AP
+VP -> N
+VP -> NP VP
+NP -> Np Ny
+VP -> X
+NP -> NP Np
+PP -> N V
+VP -> V
+NP -> Nc
+AP -> A XP
+PP -> C NP
+AP -> C A
+NP -> Nu M
+NP -> Np
+NP -> Nu N
+S -> VP PP
+VP -> V NP
+NP -> R NP
+NP -> Nu
+NP -> A N
+NP -> Ny
+NP -> P VP
+VP -> V MP
+NP -> R Np
+vP -> R VP
+AP -> A VP
+Y -> B
+NP -> Nc AP
+NP -> Ny AP
+AP -> T A
+AP -> AP AP
+NP -> R A
+NP -> Nc N
+NP -> Nc P
+PP -> N NP
+NP -> Nc M
+NP -> Nc V
+NP -> Nc Y
+NP -> R N
+NP -> Nc A
+NP -> R P
+NP -> NP
+VP -> PP VP
+NP -> Np VP
+NP -> M AP
+PP -> R
+PP -> P
+MP -> M PP
+S -> PP AP
+VP -> V RP
+VP -> X V
+NP -> T NP
+VP -> V QP
+NP -> B
+NP -> P
+NP -> M
+NP -> N
+NP -> V
+NP -> Y
+QP -> M
+MP -> M NP
+VP -> V PP
+NP -> NP VP
+AP -> RP AP
+NP -> P C
+VP -> L NP
+NP -> N AP
+SF -> VP SF
+NP -> P P
+RP -> T R
+NP -> P M
+NP -> P N
+NP -> P T
+PP -> N
+VP -> V Np
+PP -> E
+VP -> V Ny
+Np -> N
+QP -> X QP
+NP -> NP A
+VP -> R AP
+PP -> E PP
+VP -> V VP
+NP -> M A
+VP -> V X
+VP -> V V
+VP -> V S
+VP -> V T
+NP -> M N
+NP -> M R
+NP -> NP AP
+NP -> M P
+VP -> V vP
+PP -> C P
+PP -> E Np
+NP -> NP R
+NP -> M V
+QP -> M PP
+AP -> A
+NP -> NP N
+NP -> NP M
+NP -> NP P
+PP -> E Ny
+NP -> M Y
+NP -> NP V
+NP -> Np AP
+NP -> NP X
+Np -> T
+V -> V NP
+SQ -> NP
+VP -> V A
+NP -> QP Nu
+TMP -> X
+NP -> Np T
+XP -> L X
+VP -> B NP
+QP -> M Np
+NP -> Np N
+NP -> Np M
+PP -> P RP
+NP -> Np P
+VP -> X NP
+QP -> M Nu
+VP -> V R
+AP -> P A
+APP -> A VP
+VP -> V P
+NP -> Np V
+NP -> N A
+QP -> M Ny
+VP -> V N
+NP -> Np X
+RP -> R
+MP -> M
+NP -> N E
+NP -> N I
+NP -> V NP
+QP -> M X
+QP -> M Y
+NP -> N M
+NP -> N N
+S -> NP VP
+PP -> E QP
+NP -> N R
+NP -> QP NP
+NP -> N P
+MP -> MP MP
+NP -> N V
+NP -> N S
+NP -> N T
+QP -> M NP
+NP -> N Y
+NP -> N X
+VP -> VP NP
+Np -> Ny
+QP -> M M
+QP -> M N
+Np -> Nu
+S -> NP QP
+AP -> A A
+AP -> A C
+AP -> A V
+AP -> A X
+VP -> C V
+NP -> RP NP
+AP -> A N
+AP -> A P
+AP -> A R
+AP -> A T
+PP -> E R
+S -> NP PP
+PP -> E Y
+QP -> L M
+NP -> P AP
+PP -> E X
+PP -> E V
+PP -> E P
+PP -> E N
+VP -> VP PP
+S -> RP AP
+VP -> RP VP
+NP -> A NP
+VP -> AP VP
+VP -> V XP
+AP -> AP NP
+PP -> E NP
+VP -> AP
+NP -> L NP
+VP -> N PP
+AP -> R A
+AP -> A AP
+NP -> L Ny
+S -> NP RP
+NP -> L P
+NP -> L N
+PP -> E MP
+NP -> L V
+VP -> A VP
+PP -> V P
+NP -> A PP
+NP -> Nc PP
+PP -> E XP
+NP -> Ny Np
+S -> PP VP
+AP -> AP PP
+NP -> NC Np
+NP -> Nc Ny
+QP -> R M
+NP -> Ny NP
+NP -> X NP
+NP -> QP N
+NP -> M Nc
+NP -> M NP
+NP -> Y N
+NP -> Y P
+VP -> C VP
+RP -> R VP
+VP -> R A
+VP -> X VP
+VP -> R N
+VP -> R V
+NP -> M Ny
+NP -> M Nu
+NP -> Ny PP
+PP -> PP PP
+PP -> P E
+NP -> M PP
+NP -> N MP
+PP -> P P
+VP -> VP VP
+VP -> V AP
+NP -> RP P
+NP -> N NP
+PP -> R NP
+VP -> R NP
+NP -> N Np
+S -> QP VP
+NP -> N Ny
+PP -> PP VP
+NP -> N Nu
+NP -> Nc NP
+PP -> E VP
+PP -> P VP
+NP -> N PP
+VP -> P V
+NP -> Nc Np
+NP -> N QP
+NP -> X N
